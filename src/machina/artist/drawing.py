@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
 
-from color import Color
+from .color import Color
 
 
 

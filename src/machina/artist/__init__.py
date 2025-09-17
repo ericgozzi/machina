@@ -1,2 +1,2 @@
-from .color import Color
-from .drawing import Drawing
+from .color import *
+from .drawing import *
