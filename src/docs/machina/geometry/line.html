@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
-<title>machina API documentation</title>
+<title>machina.geometry.line API documentation</title>
 <meta name="description" content="">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
@@ -33,33 +33,88 @@ el.replaceWith(d);
 <main>
 <article id="content">
 <header>
-<h1 class="title">Package <code>machina</code></h1>
+<h1 class="title">Module <code>machina.geometry.line</code></h1>
 </header>
 <section id="section-intro">
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt><code class="name"><a title="machina.artist" href="artist/index.html">machina.artist</a></code></dt>
+<dt id="machina.geometry.line.Line"><code class="flex name class">
+<span>class <span class="ident">Line</span></span>
+<span>(</span><span>point: <a title="machina.geometry.point.Point" href="point.html#machina.geometry.point.Point">Point</a>,<br>direction: <a title="machina.geometry.vector.Vector" href="vector.html#machina.geometry.vector.Vector">Vector</a>)</span>
+</code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="machina.pixel" href="pixel/index.html">machina.pixel</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="machina.tools" href="tools/index.html">machina.tools</a></code></dt>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Line:
 
-<dd>
+    def __init__(self, point: Point, direction: Vector):
+        self.point = point
+        self.direction = direction.normalized()
+
+
+
+    def __repr__(self):
+        return f&#34;Line(point={self.point}, direction={self.direction})&#34;
+
+
+
+    def point_at(self, t):
+        &#34;&#34;&#34;Return a point on the line at parameter t.&#34;&#34;&#34;
+        return self.point + self.direction * t
+    
+    
+    def closest_point(self, point: Point):
+        &#34;&#34;&#34;Return the point on the line closest to another `Point`.&#34;&#34;&#34;
+        v: Vector = point - self.point
+        t = v.dot(self.direction)
+        return self.point_at(t)</code></pre>
+</details>
 <div class="desc"></div>
+<h3>Methods</h3>
+<dl>
+<dt id="machina.geometry.line.Line.closest_point"><code class="name flex">
+<span>def <span class="ident">closest_point</span></span>(<span>self,<br>point: <a title="machina.geometry.point.Point" href="point.html#machina.geometry.point.Point">Point</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def closest_point(self, point: Point):
+    &#34;&#34;&#34;Return the point on the line closest to another `Point`.&#34;&#34;&#34;
+    v: Vector = point - self.point
+    t = v.dot(self.direction)
+    return self.point_at(t)</code></pre>
+</details>
+<div class="desc"><p>Return the point on the line closest to another <code>Point</code>.</p></div>
+</dd>
+<dt id="machina.geometry.line.Line.point_at"><code class="name flex">
+<span>def <span class="ident">point_at</span></span>(<span>self, t)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def point_at(self, t):
+    &#34;&#34;&#34;Return a point on the line at parameter t.&#34;&#34;&#34;
+    return self.point + self.direction * t</code></pre>
+</details>
+<div class="desc"><p>Return a point on the line at parameter t.</p></div>
 </dd>
 </dl>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -67,11 +122,20 @@ el.replaceWith(d);
 <ul></ul>
 </div>
 <ul id="index">
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<li><h3>Super-module</h3>
 <ul>
-<li><code><a title="machina.artist" href="artist/index.html">machina.artist</a></code></li>
-<li><code><a title="machina.pixel" href="pixel/index.html">machina.pixel</a></code></li>
-<li><code><a title="machina.tools" href="tools/index.html">machina.tools</a></code></li>
+<li><code><a title="machina.geometry" href="index.html">machina.geometry</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="machina.geometry.line.Line" href="#machina.geometry.line.Line">Line</a></code></h4>
+<ul class="">
+<li><code><a title="machina.geometry.line.Line.closest_point" href="#machina.geometry.line.Line.closest_point">closest_point</a></code></li>
+<li><code><a title="machina.geometry.line.Line.point_at" href="#machina.geometry.line.Line.point_at">point_at</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

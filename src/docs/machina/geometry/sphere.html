@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
-<title>machina API documentation</title>
+<title>machina.geometry.sphere API documentation</title>
 <meta name="description" content="">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
@@ -33,33 +33,104 @@ el.replaceWith(d);
 <main>
 <article id="content">
 <header>
-<h1 class="title">Package <code>machina</code></h1>
+<h1 class="title">Module <code>machina.geometry.sphere</code></h1>
 </header>
 <section id="section-intro">
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt><code class="name"><a title="machina.artist" href="artist/index.html">machina.artist</a></code></dt>
+<dt id="machina.geometry.sphere.Sphere"><code class="flex name class">
+<span>class <span class="ident">Sphere</span></span>
+<span>(</span><span>center: <a title="machina.geometry.point.Point" href="point.html#machina.geometry.point.Point">Point</a>,<br>radius: float)</span>
+</code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="machina.pixel" href="pixel/index.html">machina.pixel</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="machina.tools" href="tools/index.html">machina.tools</a></code></dt>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Sphere:
 
+    def __init__(self, center: Point, radius: float):
+        self.center = center
+        self.radius = radius
+
+
+    def __repr__(self):
+        return f&#34;Sphere(center={self.center}, radius={self.radius})&#34;
+
+
+    @property
+    def area(self):
+        return 4 * math.pi * self.radius**2
+    
+
+    @property
+    def volume(self):
+        return (4/3) * math.py * self.radius ** 3
+    
+
+    def contains(self, point: Point) -&gt; bool:
+        dx = point.x - self.center.x
+        dy = point.y - self.center.y
+        dz = point.z - self.center.z
+        return dx * dx + dy * dy + dz * dz &lt;= self.radius**2</code></pre>
+</details>
+<div class="desc"></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="machina.geometry.sphere.Sphere.area"><code class="name">prop <span class="ident">area</span></code></dt>
 <dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def area(self):
+    return 4 * math.pi * self.radius**2</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="machina.geometry.sphere.Sphere.volume"><code class="name">prop <span class="ident">volume</span></code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def volume(self):
+    return (4/3) * math.py * self.radius ** 3</code></pre>
+</details>
 <div class="desc"></div>
 </dd>
 </dl>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
+<h3>Methods</h3>
+<dl>
+<dt id="machina.geometry.sphere.Sphere.contains"><code class="name flex">
+<span>def <span class="ident">contains</span></span>(<span>self,<br>point: <a title="machina.geometry.point.Point" href="point.html#machina.geometry.point.Point">Point</a>) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def contains(self, point: Point) -&gt; bool:
+    dx = point.x - self.center.x
+    dy = point.y - self.center.y
+    dz = point.z - self.center.z
+    return dx * dx + dy * dy + dz * dz &lt;= self.radius**2</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -67,11 +138,21 @@ el.replaceWith(d);
 <ul></ul>
 </div>
 <ul id="index">
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<li><h3>Super-module</h3>
 <ul>
-<li><code><a title="machina.artist" href="artist/index.html">machina.artist</a></code></li>
-<li><code><a title="machina.pixel" href="pixel/index.html">machina.pixel</a></code></li>
-<li><code><a title="machina.tools" href="tools/index.html">machina.tools</a></code></li>
+<li><code><a title="machina.geometry" href="index.html">machina.geometry</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="machina.geometry.sphere.Sphere" href="#machina.geometry.sphere.Sphere">Sphere</a></code></h4>
+<ul class="">
+<li><code><a title="machina.geometry.sphere.Sphere.area" href="#machina.geometry.sphere.Sphere.area">area</a></code></li>
+<li><code><a title="machina.geometry.sphere.Sphere.contains" href="#machina.geometry.sphere.Sphere.contains">contains</a></code></li>
+<li><code><a title="machina.geometry.sphere.Sphere.volume" href="#machina.geometry.sphere.Sphere.volume">volume</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
