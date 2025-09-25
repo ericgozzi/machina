@@ -1,6 +1,6 @@
-from cuboid import Cuboid
-from frame import Frame
-from point import Point
+from .cuboid import Cuboid
+from .frame import Frame
+from .point import Point
 
 
 

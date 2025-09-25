@@ -1,8 +1,8 @@
 import math
 
 
-from point import Point
-from vector import Vector
+from .point import Point
+from .vector import Vector
 
 
 

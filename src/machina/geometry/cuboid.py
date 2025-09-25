@@ -1,15 +1,33 @@
 import math
 
 
-from point import Point
-from vector import Vector
-from frame import Frame
+from .point import Point
+from .vector import Vector
+from .frame import Frame
 
 
 
 class Cuboid:
 
     def __init__(self, frame: Frame, lx: float, ly: float, lz: float):
+        """ 
+        Initialize a cuboid geometry.
+
+        A cuboid is defined by a reference frame located at its center
+        and the lengths of its three sides along the X, Y, and Z axes.
+
+        Parameters:
+            frame (Frame): The reference frame at the cuboid's center.
+            lx (float): Length of the cuboid along the X-axis.
+            ly (float): Length of the cuboid along the Y-axis.
+            lz (float): Length of the cuboid along the Z-axis.
+
+        Attributes:
+            frame (Frame): Stores the cuboid's center frame.
+            lx (float): Length along X-axis.
+            ly (float): Length along Y-axis.
+            lz (float): Length along Z-axis.
+        """
         self.frame = frame
         self.lx = lx
         self.ly = ly

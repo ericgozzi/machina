@@ -1,5 +1,5 @@
-from cuboid import Cuboid
-from frame import Frame
+from .cuboid import Cuboid
+from .frame import Frame
 
 
 
