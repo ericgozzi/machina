@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>machina.artist.drawing API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>machina.artist.drawing</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="machina.artist.drawing.Drawing"><code class="flex name class">
+<span>class <span class="ident">Drawing</span></span>
+<span>(</span><span>width=500, height=500)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Drawing:
+
+
+
+    def __init__(self, width=500, height=500):
+        self.width = width
+        self.height = height
+
+        # Create the root SVG element
+        self.svg = ET.Element(&#39;svg&#39;, xmlns=&#34;http://www.w3.org/2000/svg&#34;,
+                              width = str(width),
+                              height = str(height))
+        
+    
+    def add_line(self, x1, y1, x2, y2, **kwargs):
+        &#34;&#34;&#34;
+        Add a line element to the SVG.
+
+        Parameters
+        ----------
+        x1 : float
+            The x-coordinate of the start point.
+        y1 : float
+            The y-coordinate of the start point.
+        x2 : float
+            The x-coordinate of the end point.
+        y2 : float
+            The y-coordinate of the end point.
+
+        Keyword Arguments (kwargs)
+        -------------------------
+        stroke_color : Color, optional
+            The stroke color of the line. Must be a Color object. Default is Color.WHITE.
+        stroke_width : float, optional
+            The width of the line stroke. Default is 1.
+        stroke_opacity : float, optional
+            Opacity of the stroke (0.0–1.0). Default is 1.0.
+        opacity : float, optional
+            Overall opacity of the line (0.0–1.0). Default is 1.0.
+        stroke_linecap : str, optional
+            Style of the line endings. Options: &#34;butt&#34;, &#34;round&#34;, &#34;square&#34;. Default is &#34;butt&#34;.
+        stroke_linejoin : str, optional
+            Style of the line joins. Options: &#34;miter&#34;, &#34;round&#34;, &#34;bevel&#34;. Default is &#34;miter&#34;.
+        display : str, optional
+            Display property of the SVG element. Default is &#34;inline&#34;.
+
+        Additional kwargs
+        -----------------
+        Any other valid SVG attributes (e.g., &#39;id&#39;, &#39;transform&#39;, &#39;style&#39;, &#39;pointer-events&#39;) can also
+        be passed via kwargs. These attributes will be added directly to the SVG element.
+
+        Notes
+        -----
+        - Only Color objects are accepted for stroke_color.
+        - All numerical values are converted to strings internally to comply with SVG XML attribute requirements.
+        &#34;&#34;&#34;
+        attrs = {
+            &#34;x1&#34;: str(x1),
+            &#34;y1&#34;: str(y1),
+            &#34;x2&#34;: str(x2),
+            &#34;y2&#34;: str(y2),
+            &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+            &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+            &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+            &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+            &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+            &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;),
+            &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;)
+        }
+
+        line = ET.Element(&#34;line&#34;, **attrs)
+        self.svg.append(line)
+
+
+    def add_rectangle(self, x, y, width, height, **kwargs):
+        &#34;&#34;&#34;
+        Add a rectangle element to the SVG.
+
+        Parameters
+        ----------
+        x : float
+            The x-coordinate of the top-left corner.
+        y : float
+            The y-coordinate of the top-left corner.
+        width : float
+            The width of the rectangle.
+        height : float
+            The height of the rectangle.
+
+        Keyword Arguments (kwargs)
+        -------------------------
+        fill_color : Color, optional
+            The fill color of the rectangle. Must be a Color object. Default is Color.WHITE.
+        stroke_color : Color, optional
+            The stroke (border) color of the rectangle. Must be a Color object. Default is Color.WHITE.
+        stroke_width : float, optional
+            The width of the rectangle&#39;s stroke. Default is 1.
+        fill_opacity : float, optional
+            Opacity of the fill (0.0–1.0). Default is 1.0.
+        stroke_opacity : float, optional
+            Opacity of the stroke (0.0–1.0). Default is 1.0.
+        opacity : float, optional
+            Overall opacity of the rectangle (0.0–1.0). Default is 1.0.
+        rx : float, optional
+            Horizontal corner radius (for rounded corners). Default is 0.
+        ry : float, optional
+            Vertical corner radius (for rounded corners). Default is 0.
+        display : str, optional
+            Display property of the SVG element. Default is &#34;inline&#34;.
+        stroke_linecap : str, optional
+            Style of stroke line endings. Default is &#34;butt&#34;.
+        stroke_linejoin : str, optional
+            Style of stroke line joins. Default is &#34;miter&#34;.
+
+        Additional kwargs
+        -----------------
+        Any other valid SVG attributes (e.g., &#39;id&#39;, &#39;transform&#39;, &#39;style&#39;, &#39;pointer-events&#39;) can also
+        be passed via kwargs.
+
+        Notes
+        -----
+        - Only Color objects are accepted for fill_color and stroke_color.
+        - All numerical values are converted to strings internally to comply with SVG XML attribute requirements.
+        &#34;&#34;&#34;
+
+        attrs = {
+            &#34;x&#34;: str(x),
+            &#34;y&#34;: str(y),
+            &#34;width&#34;: str(width),
+            &#34;height&#34;: str(height),
+            &#34;rx&#34;: str(kwargs.get(&#34;rx&#34;, 0)),
+            &#34;ry&#34;: str(kwargs.get(&#34;ry&#34;, 0)),
+            &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, Color.WHITE).hex,
+            &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+            &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+            &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 1.0)),
+            &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+            &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+            &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;),
+            &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+            &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;)
+        }
+
+        rect = ET.Element(&#34;rect&#34;, **attrs)
+        self.svg.append(rect)
+
+
+    def add_circle(self, center_x, center_y, radius, **kwargs):
+        &#34;&#34;&#34;
+        Add a circle element to the SVG.
+
+        Parameters
+        ----------
+        center_x : float
+            The x-coordinate of the circle&#39;s center.
+        center_y : float
+            The y-coordinate of the circle&#39;s center.
+        radius : float
+            The radius of the circle.
+
+        Keyword Arguments (kwargs)
+        -------------------------
+        fill_color : Color, optional
+            The fill color of the circle. Must be a Color object. Default is Color.WHITE.
+        stroke_color : Color, optional
+            The stroke (border) color of the circle. Must be a Color object. Default is Color.WHITE.
+        stroke_width : float, optional
+            The width of the stroke. Default is 1.
+        fill_opacity : float, optional
+            Opacity of the fill (0.0–1.0). Default is 1.0.
+        stroke_opacity : float, optional
+            Opacity of the stroke (0.0–1.0). Default is 1.0.
+        opacity : float, optional
+            Overall opacity of the circle (0.0–1.0). Default is 1.0.
+        display : str, optional
+            Display property of the SVG element. Default is &#34;inline&#34;.
+        stroke_linecap : str, optional
+            Style of the stroke line endings. Options: &#34;butt&#34;, &#34;round&#34;, &#34;square&#34;. Default is &#34;butt&#34;.
+        stroke_linejoin : str, optional
+            Style of the stroke line joins. Options: &#34;miter&#34;, &#34;round&#34;, &#34;bevel&#34;. Default is &#34;miter&#34;.
+
+        Additional kwargs
+        -----------------
+        Any other valid SVG attributes (e.g., &#39;id&#39;, &#39;transform&#39;, &#39;style&#39;, &#39;pointer-events&#39;) can also
+        be passed via kwargs. These attributes will be added directly to the SVG element.
+
+        Notes
+        -----
+        - Only Color objects are accepted for fill_color and stroke_color.
+        - All numerical values are converted to strings internally to comply with SVG XML attribute requirements.
+        &#34;&#34;&#34;
+        attrs = {
+            &#34;cx&#34;: str(center_x),
+            &#34;cy&#34;: str(center_y),
+            &#34;r&#34;: str(radius),
+            &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, Color.WHITE).hex,
+            &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+            &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+            &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 1.0)),
+            &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+            &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+            &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;),
+            &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+            &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;)
+        }
+
+        circle = ET.Element(&#34;circle&#34;, **attrs)
+        self.svg.append(circle)
+
+
+    def add_polyline(self, points, **kwargs):
+        &#34;&#34;&#34;
+        Add a polyline element to the SVG.
+
+        Parameters
+        ----------
+        points : list of tuples
+            A list of (x, y) coordinate tuples defining the vertices of the polyline.
+
+        Keyword Arguments (kwargs)
+        -------------------------
+        fill_color : Color, optional
+            Fill color (usually none for polyline).
+        stroke_color : Color, optional
+            Stroke color. Must be a Color object. Default is Color.WHITE.
+        stroke_width : float, optional
+            Width of the line. Default is 1.
+        fill_opacity : float, optional
+            Opacity of the fill (0.0–1.0). Default is 0.0.
+        stroke_opacity : float, optional
+            Opacity of the stroke (0.0–1.0). Default is 1.0.
+        opacity : float, optional
+            Overall opacity (0.0–1.0). Default is 1.0.
+        stroke_linecap : str, optional
+            Line ending style. Default is &#34;butt&#34;.
+        stroke_linejoin : str, optional
+            Line join style. Default is &#34;miter&#34;.
+        display : str, optional
+            Display property. Default is &#34;inline&#34;.
+
+        Additional kwargs
+        -----------------
+        Any other valid SVG attributes can be passed and will be added to the element.
+        &#34;&#34;&#34;
+
+        # Convert points to SVG string format
+        points_str = &#34; &#34;.join(f&#34;{x},{y}&#34; for x, y in points)
+
+        attrs = {
+            &#34;points&#34;: points_str,
+            &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, None).hex,
+            &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+            &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+            &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 0.0)),
+            &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+            &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+            &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+            &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;),
+            &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;)
+        }
+
+        polyline = ET.Element(&#34;polyline&#34;, **attrs)
+        self.svg.append(polyline)
+
+
+    def add_polygon(self, points, **kwargs):
+        &#34;&#34;&#34;
+        Add a polygon element to the SVG.
+
+        Parameters
+        ----------
+        points : list of tuples
+            A list of (x, y) coordinate tuples defining the vertices of the polygon. 
+            The polygon is automatically closed.
+
+        Keyword Arguments (kwargs)
+        -------------------------
+        fill_color : Color, optional
+            Fill color. Must be a Color object. Default is Color.WHITE.
+        stroke_color : Color, optional
+            Stroke color. Must be a Color object. Default is Color.WHITE.
+        stroke_width : float, optional
+            Width of the stroke. Default is 1.
+        fill_opacity : float, optional
+            Opacity of the fill (0.0–1.0). Default is 1.0.
+        stroke_opacity : float, optional
+            Opacity of the stroke (0.0–1.0). Default is 1.0.
+        opacity : float, optional
+            Overall opacity (0.0–1.0). Default is 1.0.
+        stroke_linecap : str, optional
+            Line ending style. Default is &#34;butt&#34;.
+        stroke_linejoin : str, optional
+            Line join style. Default is &#34;miter&#34;.
+        display : str, optional
+            Display property. Default is &#34;inline&#34;.
+
+        Additional kwargs
+        -----------------
+        Any other valid SVG attributes can be passed and will be added to the element.
+        &#34;&#34;&#34;
+
+        # Convert points to SVG string format
+        points_str = &#34; &#34;.join(f&#34;{x},{y}&#34; for x, y in points)
+
+        attrs = {
+            &#34;points&#34;: points_str,
+            &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, Color.WHITE).hex,
+            &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+            &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+            &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 1.0)),
+            &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+            &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+            &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+            &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;),
+            &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;)
+        }
+
+
+        polygon = ET.Element(&#34;polygon&#34;, **attrs)
+        self.svg.append(polygon)
+
+
+    def add_ellipse(self, cx, cy, rx, ry, **kwargs):
+        &#34;&#34;&#34;
+        Add an ellipse element to the SVG.
+
+        Parameters
+        ----------
+        cx : float
+            The x-coordinate of the ellipse center.
+        cy : float
+            The y-coordinate of the ellipse center.
+        rx : float
+            The horizontal radius of the ellipse.
+        ry : float
+            The vertical radius of the ellipse.
+
+        Keyword Arguments (kwargs)
+        -------------------------
+        fill_color : Color, optional
+            Fill color of the ellipse. Must be a Color object. Default is Color.WHITE.
+        stroke_color : Color, optional
+            Stroke color of the ellipse. Must be a Color object. Default is Color.WHITE.
+        stroke_width : float, optional
+            Width of the stroke. Default is 1.
+        fill_opacity : float, optional
+            Opacity of the fill (0.0–1.0). Default is 1.0.
+        stroke_opacity : float, optional
+            Opacity of the stroke (0.0–1.0). Default is 1.0.
+        opacity : float, optional
+            Overall opacity (0.0–1.0). Default is 1.0.
+        stroke_linecap : str, optional
+            Style of stroke line endings. Default is &#34;butt&#34;.
+        stroke_linejoin : str, optional
+            Style of stroke line joins. Default is &#34;miter&#34;.
+        display : str, optional
+            Display property. Default is &#34;inline&#34;.
+
+        Additional kwargs
+        -----------------
+        Any other valid SVG attributes (e.g., &#39;id&#39;, &#39;transform&#39;, &#39;style&#39;, &#39;pointer-events&#39;) 
+        can also be passed via kwargs.
+
+        Notes
+        -----
+        - Only Color objects are accepted for fill_color and stroke_color.
+        - All numerical values are converted to strings internally to comply with SVG XML attribute requirements.
+        &#34;&#34;&#34;
+
+        attrs = {
+            &#34;cx&#34;: str(cx),
+            &#34;cy&#34;: str(cy),
+            &#34;rx&#34;: str(rx),
+            &#34;ry&#34;: str(ry),
+            &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, Color.WHITE).hex,
+            &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+            &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+            &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 1.0)),
+            &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+            &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+            &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+            &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;),
+            &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;)
+        }
+
+
+        ellipse = ET.Element(&#34;ellipse&#34;, **attrs)
+        self.svg.append(ellipse)
+
+
+    def save(self, filepath=&#39;output.svg&#39;):
+        &#34;&#34;&#34;Save the SVG to a file.&#34;&#34;&#34;
+        tree = ET.ElementTree(self.svg)
+        tree.write(filepath, encoding=&#34;utf-8&#34;, xml_declaration=True)</code></pre>
+</details>
+<div class="desc"></div>
+<h3>Methods</h3>
+<dl>
+<dt id="machina.artist.drawing.Drawing.add_circle"><code class="name flex">
+<span>def <span class="ident">add_circle</span></span>(<span>self, center_x, center_y, radius, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_circle(self, center_x, center_y, radius, **kwargs):
+    &#34;&#34;&#34;
+    Add a circle element to the SVG.
+
+    Parameters
+    ----------
+    center_x : float
+        The x-coordinate of the circle&#39;s center.
+    center_y : float
+        The y-coordinate of the circle&#39;s center.
+    radius : float
+        The radius of the circle.
+
+    Keyword Arguments (kwargs)
+    -------------------------
+    fill_color : Color, optional
+        The fill color of the circle. Must be a Color object. Default is Color.WHITE.
+    stroke_color : Color, optional
+        The stroke (border) color of the circle. Must be a Color object. Default is Color.WHITE.
+    stroke_width : float, optional
+        The width of the stroke. Default is 1.
+    fill_opacity : float, optional
+        Opacity of the fill (0.0–1.0). Default is 1.0.
+    stroke_opacity : float, optional
+        Opacity of the stroke (0.0–1.0). Default is 1.0.
+    opacity : float, optional
+        Overall opacity of the circle (0.0–1.0). Default is 1.0.
+    display : str, optional
+        Display property of the SVG element. Default is &#34;inline&#34;.
+    stroke_linecap : str, optional
+        Style of the stroke line endings. Options: &#34;butt&#34;, &#34;round&#34;, &#34;square&#34;. Default is &#34;butt&#34;.
+    stroke_linejoin : str, optional
+        Style of the stroke line joins. Options: &#34;miter&#34;, &#34;round&#34;, &#34;bevel&#34;. Default is &#34;miter&#34;.
+
+    Additional kwargs
+    -----------------
+    Any other valid SVG attributes (e.g., &#39;id&#39;, &#39;transform&#39;, &#39;style&#39;, &#39;pointer-events&#39;) can also
+    be passed via kwargs. These attributes will be added directly to the SVG element.
+
+    Notes
+    -----
+    - Only Color objects are accepted for fill_color and stroke_color.
+    - All numerical values are converted to strings internally to comply with SVG XML attribute requirements.
+    &#34;&#34;&#34;
+    attrs = {
+        &#34;cx&#34;: str(center_x),
+        &#34;cy&#34;: str(center_y),
+        &#34;r&#34;: str(radius),
+        &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, Color.WHITE).hex,
+        &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+        &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+        &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 1.0)),
+        &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+        &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+        &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;),
+        &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+        &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;)
+    }
+
+    circle = ET.Element(&#34;circle&#34;, **attrs)
+    self.svg.append(circle)</code></pre>
+</details>
+<div class="desc"><p>Add a circle element to the SVG.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>center_x</code></strong> :&ensp;<code>float</code></dt>
+<dd>The x-coordinate of the circle's center.</dd>
+<dt><strong><code>center_y</code></strong> :&ensp;<code>float</code></dt>
+<dd>The y-coordinate of the circle's center.</dd>
+<dt><strong><code>radius</code></strong> :&ensp;<code>float</code></dt>
+<dd>The radius of the circle.</dd>
+</dl>
+<h2 id="keyword-arguments-kwargs">Keyword Arguments (kwargs)</h2>
+<p>fill_color : Color, optional
+The fill color of the circle. Must be a Color object. Default is Color.WHITE.
+stroke_color : Color, optional
+The stroke (border) color of the circle. Must be a Color object. Default is Color.WHITE.
+stroke_width : float, optional
+The width of the stroke. Default is 1.
+fill_opacity : float, optional
+Opacity of the fill (0.0–1.0). Default is 1.0.
+stroke_opacity : float, optional
+Opacity of the stroke (0.0–1.0). Default is 1.0.
+opacity : float, optional
+Overall opacity of the circle (0.0–1.0). Default is 1.0.
+display : str, optional
+Display property of the SVG element. Default is "inline".
+stroke_linecap : str, optional
+Style of the stroke line endings. Options: "butt", "round", "square". Default is "butt".
+stroke_linejoin : str, optional
+Style of the stroke line joins. Options: "miter", "round", "bevel". Default is "miter".</p>
+<h2 id="additional-kwargs">Additional Kwargs</h2>
+<p>Any other valid SVG attributes (e.g., 'id', 'transform', 'style', 'pointer-events') can also
+be passed via kwargs. These attributes will be added directly to the SVG element.</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Only Color objects are accepted for fill_color and stroke_color.</li>
+<li>All numerical values are converted to strings internally to comply with SVG XML attribute requirements.</li>
+</ul></div>
+</dd>
+<dt id="machina.artist.drawing.Drawing.add_ellipse"><code class="name flex">
+<span>def <span class="ident">add_ellipse</span></span>(<span>self, cx, cy, rx, ry, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_ellipse(self, cx, cy, rx, ry, **kwargs):
+    &#34;&#34;&#34;
+    Add an ellipse element to the SVG.
+
+    Parameters
+    ----------
+    cx : float
+        The x-coordinate of the ellipse center.
+    cy : float
+        The y-coordinate of the ellipse center.
+    rx : float
+        The horizontal radius of the ellipse.
+    ry : float
+        The vertical radius of the ellipse.
+
+    Keyword Arguments (kwargs)
+    -------------------------
+    fill_color : Color, optional
+        Fill color of the ellipse. Must be a Color object. Default is Color.WHITE.
+    stroke_color : Color, optional
+        Stroke color of the ellipse. Must be a Color object. Default is Color.WHITE.
+    stroke_width : float, optional
+        Width of the stroke. Default is 1.
+    fill_opacity : float, optional
+        Opacity of the fill (0.0–1.0). Default is 1.0.
+    stroke_opacity : float, optional
+        Opacity of the stroke (0.0–1.0). Default is 1.0.
+    opacity : float, optional
+        Overall opacity (0.0–1.0). Default is 1.0.
+    stroke_linecap : str, optional
+        Style of stroke line endings. Default is &#34;butt&#34;.
+    stroke_linejoin : str, optional
+        Style of stroke line joins. Default is &#34;miter&#34;.
+    display : str, optional
+        Display property. Default is &#34;inline&#34;.
+
+    Additional kwargs
+    -----------------
+    Any other valid SVG attributes (e.g., &#39;id&#39;, &#39;transform&#39;, &#39;style&#39;, &#39;pointer-events&#39;) 
+    can also be passed via kwargs.
+
+    Notes
+    -----
+    - Only Color objects are accepted for fill_color and stroke_color.
+    - All numerical values are converted to strings internally to comply with SVG XML attribute requirements.
+    &#34;&#34;&#34;
+
+    attrs = {
+        &#34;cx&#34;: str(cx),
+        &#34;cy&#34;: str(cy),
+        &#34;rx&#34;: str(rx),
+        &#34;ry&#34;: str(ry),
+        &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, Color.WHITE).hex,
+        &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+        &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+        &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 1.0)),
+        &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+        &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+        &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+        &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;),
+        &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;)
+    }
+
+
+    ellipse = ET.Element(&#34;ellipse&#34;, **attrs)
+    self.svg.append(ellipse)</code></pre>
+</details>
+<div class="desc"><p>Add an ellipse element to the SVG.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>cx</code></strong> :&ensp;<code>float</code></dt>
+<dd>The x-coordinate of the ellipse center.</dd>
+<dt><strong><code>cy</code></strong> :&ensp;<code>float</code></dt>
+<dd>The y-coordinate of the ellipse center.</dd>
+<dt><strong><code>rx</code></strong> :&ensp;<code>float</code></dt>
+<dd>The horizontal radius of the ellipse.</dd>
+<dt><strong><code>ry</code></strong> :&ensp;<code>float</code></dt>
+<dd>The vertical radius of the ellipse.</dd>
+</dl>
+<h2 id="keyword-arguments-kwargs">Keyword Arguments (kwargs)</h2>
+<p>fill_color : Color, optional
+Fill color of the ellipse. Must be a Color object. Default is Color.WHITE.
+stroke_color : Color, optional
+Stroke color of the ellipse. Must be a Color object. Default is Color.WHITE.
+stroke_width : float, optional
+Width of the stroke. Default is 1.
+fill_opacity : float, optional
+Opacity of the fill (0.0–1.0). Default is 1.0.
+stroke_opacity : float, optional
+Opacity of the stroke (0.0–1.0). Default is 1.0.
+opacity : float, optional
+Overall opacity (0.0–1.0). Default is 1.0.
+stroke_linecap : str, optional
+Style of stroke line endings. Default is "butt".
+stroke_linejoin : str, optional
+Style of stroke line joins. Default is "miter".
+display : str, optional
+Display property. Default is "inline".</p>
+<h2 id="additional-kwargs">Additional Kwargs</h2>
+<p>Any other valid SVG attributes (e.g., 'id', 'transform', 'style', 'pointer-events')
+can also be passed via kwargs.</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Only Color objects are accepted for fill_color and stroke_color.</li>
+<li>All numerical values are converted to strings internally to comply with SVG XML attribute requirements.</li>
+</ul></div>
+</dd>
+<dt id="machina.artist.drawing.Drawing.add_line"><code class="name flex">
+<span>def <span class="ident">add_line</span></span>(<span>self, x1, y1, x2, y2, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_line(self, x1, y1, x2, y2, **kwargs):
+    &#34;&#34;&#34;
+    Add a line element to the SVG.
+
+    Parameters
+    ----------
+    x1 : float
+        The x-coordinate of the start point.
+    y1 : float
+        The y-coordinate of the start point.
+    x2 : float
+        The x-coordinate of the end point.
+    y2 : float
+        The y-coordinate of the end point.
+
+    Keyword Arguments (kwargs)
+    -------------------------
+    stroke_color : Color, optional
+        The stroke color of the line. Must be a Color object. Default is Color.WHITE.
+    stroke_width : float, optional
+        The width of the line stroke. Default is 1.
+    stroke_opacity : float, optional
+        Opacity of the stroke (0.0–1.0). Default is 1.0.
+    opacity : float, optional
+        Overall opacity of the line (0.0–1.0). Default is 1.0.
+    stroke_linecap : str, optional
+        Style of the line endings. Options: &#34;butt&#34;, &#34;round&#34;, &#34;square&#34;. Default is &#34;butt&#34;.
+    stroke_linejoin : str, optional
+        Style of the line joins. Options: &#34;miter&#34;, &#34;round&#34;, &#34;bevel&#34;. Default is &#34;miter&#34;.
+    display : str, optional
+        Display property of the SVG element. Default is &#34;inline&#34;.
+
+    Additional kwargs
+    -----------------
+    Any other valid SVG attributes (e.g., &#39;id&#39;, &#39;transform&#39;, &#39;style&#39;, &#39;pointer-events&#39;) can also
+    be passed via kwargs. These attributes will be added directly to the SVG element.
+
+    Notes
+    -----
+    - Only Color objects are accepted for stroke_color.
+    - All numerical values are converted to strings internally to comply with SVG XML attribute requirements.
+    &#34;&#34;&#34;
+    attrs = {
+        &#34;x1&#34;: str(x1),
+        &#34;y1&#34;: str(y1),
+        &#34;x2&#34;: str(x2),
+        &#34;y2&#34;: str(y2),
+        &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+        &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+        &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+        &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+        &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+        &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;),
+        &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;)
+    }
+
+    line = ET.Element(&#34;line&#34;, **attrs)
+    self.svg.append(line)</code></pre>
+</details>
+<div class="desc"><p>Add a line element to the SVG.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x1</code></strong> :&ensp;<code>float</code></dt>
+<dd>The x-coordinate of the start point.</dd>
+<dt><strong><code>y1</code></strong> :&ensp;<code>float</code></dt>
+<dd>The y-coordinate of the start point.</dd>
+<dt><strong><code>x2</code></strong> :&ensp;<code>float</code></dt>
+<dd>The x-coordinate of the end point.</dd>
+<dt><strong><code>y2</code></strong> :&ensp;<code>float</code></dt>
+<dd>The y-coordinate of the end point.</dd>
+</dl>
+<h2 id="keyword-arguments-kwargs">Keyword Arguments (kwargs)</h2>
+<p>stroke_color : Color, optional
+The stroke color of the line. Must be a Color object. Default is Color.WHITE.
+stroke_width : float, optional
+The width of the line stroke. Default is 1.
+stroke_opacity : float, optional
+Opacity of the stroke (0.0–1.0). Default is 1.0.
+opacity : float, optional
+Overall opacity of the line (0.0–1.0). Default is 1.0.
+stroke_linecap : str, optional
+Style of the line endings. Options: "butt", "round", "square". Default is "butt".
+stroke_linejoin : str, optional
+Style of the line joins. Options: "miter", "round", "bevel". Default is "miter".
+display : str, optional
+Display property of the SVG element. Default is "inline".</p>
+<h2 id="additional-kwargs">Additional Kwargs</h2>
+<p>Any other valid SVG attributes (e.g., 'id', 'transform', 'style', 'pointer-events') can also
+be passed via kwargs. These attributes will be added directly to the SVG element.</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Only Color objects are accepted for stroke_color.</li>
+<li>All numerical values are converted to strings internally to comply with SVG XML attribute requirements.</li>
+</ul></div>
+</dd>
+<dt id="machina.artist.drawing.Drawing.add_polygon"><code class="name flex">
+<span>def <span class="ident">add_polygon</span></span>(<span>self, points, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_polygon(self, points, **kwargs):
+    &#34;&#34;&#34;
+    Add a polygon element to the SVG.
+
+    Parameters
+    ----------
+    points : list of tuples
+        A list of (x, y) coordinate tuples defining the vertices of the polygon. 
+        The polygon is automatically closed.
+
+    Keyword Arguments (kwargs)
+    -------------------------
+    fill_color : Color, optional
+        Fill color. Must be a Color object. Default is Color.WHITE.
+    stroke_color : Color, optional
+        Stroke color. Must be a Color object. Default is Color.WHITE.
+    stroke_width : float, optional
+        Width of the stroke. Default is 1.
+    fill_opacity : float, optional
+        Opacity of the fill (0.0–1.0). Default is 1.0.
+    stroke_opacity : float, optional
+        Opacity of the stroke (0.0–1.0). Default is 1.0.
+    opacity : float, optional
+        Overall opacity (0.0–1.0). Default is 1.0.
+    stroke_linecap : str, optional
+        Line ending style. Default is &#34;butt&#34;.
+    stroke_linejoin : str, optional
+        Line join style. Default is &#34;miter&#34;.
+    display : str, optional
+        Display property. Default is &#34;inline&#34;.
+
+    Additional kwargs
+    -----------------
+    Any other valid SVG attributes can be passed and will be added to the element.
+    &#34;&#34;&#34;
+
+    # Convert points to SVG string format
+    points_str = &#34; &#34;.join(f&#34;{x},{y}&#34; for x, y in points)
+
+    attrs = {
+        &#34;points&#34;: points_str,
+        &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, Color.WHITE).hex,
+        &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+        &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+        &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 1.0)),
+        &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+        &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+        &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+        &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;),
+        &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;)
+    }
+
+
+    polygon = ET.Element(&#34;polygon&#34;, **attrs)
+    self.svg.append(polygon)</code></pre>
+</details>
+<div class="desc"><p>Add a polygon element to the SVG.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>points</code></strong> :&ensp;<code>list</code> of <code>tuples</code></dt>
+<dd>A list of (x, y) coordinate tuples defining the vertices of the polygon.
+The polygon is automatically closed.</dd>
+</dl>
+<h2 id="keyword-arguments-kwargs">Keyword Arguments (kwargs)</h2>
+<p>fill_color : Color, optional
+Fill color. Must be a Color object. Default is Color.WHITE.
+stroke_color : Color, optional
+Stroke color. Must be a Color object. Default is Color.WHITE.
+stroke_width : float, optional
+Width of the stroke. Default is 1.
+fill_opacity : float, optional
+Opacity of the fill (0.0–1.0). Default is 1.0.
+stroke_opacity : float, optional
+Opacity of the stroke (0.0–1.0). Default is 1.0.
+opacity : float, optional
+Overall opacity (0.0–1.0). Default is 1.0.
+stroke_linecap : str, optional
+Line ending style. Default is "butt".
+stroke_linejoin : str, optional
+Line join style. Default is "miter".
+display : str, optional
+Display property. Default is "inline".</p>
+<h2 id="additional-kwargs">Additional Kwargs</h2>
+<p>Any other valid SVG attributes can be passed and will be added to the element.</p></div>
+</dd>
+<dt id="machina.artist.drawing.Drawing.add_polyline"><code class="name flex">
+<span>def <span class="ident">add_polyline</span></span>(<span>self, points, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_polyline(self, points, **kwargs):
+    &#34;&#34;&#34;
+    Add a polyline element to the SVG.
+
+    Parameters
+    ----------
+    points : list of tuples
+        A list of (x, y) coordinate tuples defining the vertices of the polyline.
+
+    Keyword Arguments (kwargs)
+    -------------------------
+    fill_color : Color, optional
+        Fill color (usually none for polyline).
+    stroke_color : Color, optional
+        Stroke color. Must be a Color object. Default is Color.WHITE.
+    stroke_width : float, optional
+        Width of the line. Default is 1.
+    fill_opacity : float, optional
+        Opacity of the fill (0.0–1.0). Default is 0.0.
+    stroke_opacity : float, optional
+        Opacity of the stroke (0.0–1.0). Default is 1.0.
+    opacity : float, optional
+        Overall opacity (0.0–1.0). Default is 1.0.
+    stroke_linecap : str, optional
+        Line ending style. Default is &#34;butt&#34;.
+    stroke_linejoin : str, optional
+        Line join style. Default is &#34;miter&#34;.
+    display : str, optional
+        Display property. Default is &#34;inline&#34;.
+
+    Additional kwargs
+    -----------------
+    Any other valid SVG attributes can be passed and will be added to the element.
+    &#34;&#34;&#34;
+
+    # Convert points to SVG string format
+    points_str = &#34; &#34;.join(f&#34;{x},{y}&#34; for x, y in points)
+
+    attrs = {
+        &#34;points&#34;: points_str,
+        &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, None).hex,
+        &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+        &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+        &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 0.0)),
+        &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+        &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+        &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+        &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;),
+        &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;)
+    }
+
+    polyline = ET.Element(&#34;polyline&#34;, **attrs)
+    self.svg.append(polyline)</code></pre>
+</details>
+<div class="desc"><p>Add a polyline element to the SVG.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>points</code></strong> :&ensp;<code>list</code> of <code>tuples</code></dt>
+<dd>A list of (x, y) coordinate tuples defining the vertices of the polyline.</dd>
+</dl>
+<h2 id="keyword-arguments-kwargs">Keyword Arguments (kwargs)</h2>
+<p>fill_color : Color, optional
+Fill color (usually none for polyline).
+stroke_color : Color, optional
+Stroke color. Must be a Color object. Default is Color.WHITE.
+stroke_width : float, optional
+Width of the line. Default is 1.
+fill_opacity : float, optional
+Opacity of the fill (0.0–1.0). Default is 0.0.
+stroke_opacity : float, optional
+Opacity of the stroke (0.0–1.0). Default is 1.0.
+opacity : float, optional
+Overall opacity (0.0–1.0). Default is 1.0.
+stroke_linecap : str, optional
+Line ending style. Default is "butt".
+stroke_linejoin : str, optional
+Line join style. Default is "miter".
+display : str, optional
+Display property. Default is "inline".</p>
+<h2 id="additional-kwargs">Additional Kwargs</h2>
+<p>Any other valid SVG attributes can be passed and will be added to the element.</p></div>
+</dd>
+<dt id="machina.artist.drawing.Drawing.add_rectangle"><code class="name flex">
+<span>def <span class="ident">add_rectangle</span></span>(<span>self, x, y, width, height, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_rectangle(self, x, y, width, height, **kwargs):
+    &#34;&#34;&#34;
+    Add a rectangle element to the SVG.
+
+    Parameters
+    ----------
+    x : float
+        The x-coordinate of the top-left corner.
+    y : float
+        The y-coordinate of the top-left corner.
+    width : float
+        The width of the rectangle.
+    height : float
+        The height of the rectangle.
+
+    Keyword Arguments (kwargs)
+    -------------------------
+    fill_color : Color, optional
+        The fill color of the rectangle. Must be a Color object. Default is Color.WHITE.
+    stroke_color : Color, optional
+        The stroke (border) color of the rectangle. Must be a Color object. Default is Color.WHITE.
+    stroke_width : float, optional
+        The width of the rectangle&#39;s stroke. Default is 1.
+    fill_opacity : float, optional
+        Opacity of the fill (0.0–1.0). Default is 1.0.
+    stroke_opacity : float, optional
+        Opacity of the stroke (0.0–1.0). Default is 1.0.
+    opacity : float, optional
+        Overall opacity of the rectangle (0.0–1.0). Default is 1.0.
+    rx : float, optional
+        Horizontal corner radius (for rounded corners). Default is 0.
+    ry : float, optional
+        Vertical corner radius (for rounded corners). Default is 0.
+    display : str, optional
+        Display property of the SVG element. Default is &#34;inline&#34;.
+    stroke_linecap : str, optional
+        Style of stroke line endings. Default is &#34;butt&#34;.
+    stroke_linejoin : str, optional
+        Style of stroke line joins. Default is &#34;miter&#34;.
+
+    Additional kwargs
+    -----------------
+    Any other valid SVG attributes (e.g., &#39;id&#39;, &#39;transform&#39;, &#39;style&#39;, &#39;pointer-events&#39;) can also
+    be passed via kwargs.
+
+    Notes
+    -----
+    - Only Color objects are accepted for fill_color and stroke_color.
+    - All numerical values are converted to strings internally to comply with SVG XML attribute requirements.
+    &#34;&#34;&#34;
+
+    attrs = {
+        &#34;x&#34;: str(x),
+        &#34;y&#34;: str(y),
+        &#34;width&#34;: str(width),
+        &#34;height&#34;: str(height),
+        &#34;rx&#34;: str(kwargs.get(&#34;rx&#34;, 0)),
+        &#34;ry&#34;: str(kwargs.get(&#34;ry&#34;, 0)),
+        &#34;fill&#34;: kwargs.get(&#34;fill_color&#34;, Color.WHITE).hex,
+        &#34;stroke&#34;: kwargs.get(&#34;stroke_color&#34;, Color.WHITE).hex,
+        &#34;stroke-width&#34;: str(kwargs.get(&#34;stroke_width&#34;, 1)),
+        &#34;fill-opacity&#34;: str(kwargs.get(&#34;fill_opacity&#34;, 1.0)),
+        &#34;stroke-opacity&#34;: str(kwargs.get(&#34;stroke_opacity&#34;, 1.0)),
+        &#34;opacity&#34;: str(kwargs.get(&#34;opacity&#34;, 1.0)),
+        &#34;display&#34;: kwargs.get(&#34;display&#34;, &#34;inline&#34;),
+        &#34;stroke-linecap&#34;: kwargs.get(&#34;stroke_linecap&#34;, &#34;butt&#34;),
+        &#34;stroke-linejoin&#34;: kwargs.get(&#34;stroke_linejoin&#34;, &#34;miter&#34;)
+    }
+
+    rect = ET.Element(&#34;rect&#34;, **attrs)
+    self.svg.append(rect)</code></pre>
+</details>
+<div class="desc"><p>Add a rectangle element to the SVG.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>float</code></dt>
+<dd>The x-coordinate of the top-left corner.</dd>
+<dt><strong><code>y</code></strong> :&ensp;<code>float</code></dt>
+<dd>The y-coordinate of the top-left corner.</dd>
+<dt><strong><code>width</code></strong> :&ensp;<code>float</code></dt>
+<dd>The width of the rectangle.</dd>
+<dt><strong><code>height</code></strong> :&ensp;<code>float</code></dt>
+<dd>The height of the rectangle.</dd>
+</dl>
+<h2 id="keyword-arguments-kwargs">Keyword Arguments (kwargs)</h2>
+<p>fill_color : Color, optional
+The fill color of the rectangle. Must be a Color object. Default is Color.WHITE.
+stroke_color : Color, optional
+The stroke (border) color of the rectangle. Must be a Color object. Default is Color.WHITE.
+stroke_width : float, optional
+The width of the rectangle's stroke. Default is 1.
+fill_opacity : float, optional
+Opacity of the fill (0.0–1.0). Default is 1.0.
+stroke_opacity : float, optional
+Opacity of the stroke (0.0–1.0). Default is 1.0.
+opacity : float, optional
+Overall opacity of the rectangle (0.0–1.0). Default is 1.0.
+rx : float, optional
+Horizontal corner radius (for rounded corners). Default is 0.
+ry : float, optional
+Vertical corner radius (for rounded corners). Default is 0.
+display : str, optional
+Display property of the SVG element. Default is "inline".
+stroke_linecap : str, optional
+Style of stroke line endings. Default is "butt".
+stroke_linejoin : str, optional
+Style of stroke line joins. Default is "miter".</p>
+<h2 id="additional-kwargs">Additional Kwargs</h2>
+<p>Any other valid SVG attributes (e.g., 'id', 'transform', 'style', 'pointer-events') can also
+be passed via kwargs.</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Only Color objects are accepted for fill_color and stroke_color.</li>
+<li>All numerical values are converted to strings internally to comply with SVG XML attribute requirements.</li>
+</ul></div>
+</dd>
+<dt id="machina.artist.drawing.Drawing.save"><code class="name flex">
+<span>def <span class="ident">save</span></span>(<span>self, filepath='output.svg')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save(self, filepath=&#39;output.svg&#39;):
+    &#34;&#34;&#34;Save the SVG to a file.&#34;&#34;&#34;
+    tree = ET.ElementTree(self.svg)
+    tree.write(filepath, encoding=&#34;utf-8&#34;, xml_declaration=True)</code></pre>
+</details>
+<div class="desc"><p>Save the SVG to a file.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="machina.artist" href="index.html">machina.artist</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="machina.artist.drawing.Drawing" href="#machina.artist.drawing.Drawing">Drawing</a></code></h4>
+<ul class="two-column">
+<li><code><a title="machina.artist.drawing.Drawing.add_circle" href="#machina.artist.drawing.Drawing.add_circle">add_circle</a></code></li>
+<li><code><a title="machina.artist.drawing.Drawing.add_ellipse" href="#machina.artist.drawing.Drawing.add_ellipse">add_ellipse</a></code></li>
+<li><code><a title="machina.artist.drawing.Drawing.add_line" href="#machina.artist.drawing.Drawing.add_line">add_line</a></code></li>
+<li><code><a title="machina.artist.drawing.Drawing.add_polygon" href="#machina.artist.drawing.Drawing.add_polygon">add_polygon</a></code></li>
+<li><code><a title="machina.artist.drawing.Drawing.add_polyline" href="#machina.artist.drawing.Drawing.add_polyline">add_polyline</a></code></li>
+<li><code><a title="machina.artist.drawing.Drawing.add_rectangle" href="#machina.artist.drawing.Drawing.add_rectangle">add_rectangle</a></code></li>
+<li><code><a title="machina.artist.drawing.Drawing.save" href="#machina.artist.drawing.Drawing.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
