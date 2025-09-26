@@ -1,1 +1,1 @@
-pdoc --html machina --output-dir docs --force --config show_source_code=True --config show_inheritance=True
+pdoc --html src/machina --output-dir docs --force --config show_source_code=True --config show_inheritance=True
