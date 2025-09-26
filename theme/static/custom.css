@@ -1,0 +1,100 @@
+/* === Global Reset === */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* === Headings === */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-top: 1.4em;
+  margin-bottom: 0.6em;
+  color: #111;
+}
+
+h1, h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+
+/* === Navigation Sidebar (classic feel) === */
+nav {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav li {
+  margin: 0.3em 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0366d6;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === Links === */
+a {
+  color: #0366d6;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Code Styling === */
+code, pre {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 90%;
+  font-family: "Fira Code", Consolas, monospace;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+}
+
+/* === Tables === */
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.6em;
+}
+
+th {
+  background: #f3f3f3;
+  text-align: left;
+}
+
+/* === Footer === */
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
+  color: #555;
+  text-align: center;
+}
