@@ -2,14 +2,7 @@
 
 
 
-
-
-- artist
-    - drawing
-    - color
-
-- pixel
-    - picture
+[Documentation](https://ericgozzi.github.io/machina/machina.html)
 
 
 
