@@ -9,4 +9,15 @@ from .transformation import Transformation
 from .translation import Translation
 from .vector import Vector
 
-__all__ = ["Frame", "Geometry", "Line", "Point", "Vector", "Cuboid"]
+__all__ = [
+    "Frame",
+    "Geometry",
+    "Line",
+    "Point",
+    "Vector",
+    "Cuboid",
+    "Rotation",
+    "Scale",
+    "Transformation",
+    "Translation",
+]

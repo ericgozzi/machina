@@ -1,7 +1,3 @@
-import math
-
-import pytest
-
 from machina.geometry import Point, Transformation, Vector
 
 
