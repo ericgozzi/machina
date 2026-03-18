@@ -1,8 +1,11 @@
 from __future__ import annotations
 
-from typing import Union
+from typing import TYPE_CHECKING, Union
 
 from machina.geometry.geometry import Geometry
+
+if TYPE_CHECKING:
+    from machina.geometry.transformation import Transformation
 
 
 class Vector(Geometry):
@@ -73,7 +76,7 @@ class Vector(Geometry):
             self.x * other.y - self.y * other.x,
         )
 
-    def transform(self, transformation):
+    def transform(self, transformation: Transformation):
         vector = transformation.apply_to_vector(self)
         self.x, self.y, self.z = vector.x, vector.y, vector.z
         return self

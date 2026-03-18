@@ -1,12 +1,17 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from machina.geometry.geometry import Geometry
 from machina.geometry.vector import Vector
 
+if TYPE_CHECKING:
+    from machina.geometry.transformation import Transformation
+
 
 class Point(Geometry):
-    def __init__(self, x: float, y: float, z: float):
-        super().__init__()
+    def __init__(self, x: float, y: float, z: float, **kwargs):
+        super().__init__(**kwargs)
         self.x = x
         self.y = y
         self.z = z
@@ -39,7 +44,7 @@ class Point(Geometry):
     def from_data(cls, data: dict) -> Point:
         return cls(data["x"], data["y"], data["z"])
 
-    def transform(self, transformation):
+    def transform(self, transformation: Transformation):
         point = transformation.apply_to_point(self)
         self.x, self.y, self.z = point.x, point.y, point.z
         return self
