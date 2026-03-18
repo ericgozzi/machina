@@ -14,7 +14,11 @@ class Sphere(Geometry):
 
     @property
     def data(self) -> dict:
-        return {"type": "sphere", "center": self.center.data, "radius": self.radius}
+        data = super().data
+        data["type"] = "sphere"
+        data["center"] = self.center.data
+        data["radius"] = self.radius
+        return data
 
     @property
     def volume(self) -> float:

@@ -24,13 +24,13 @@ class Cuboid(Geometry):
 
     @property
     def data(self) -> dict:
-        return {
-            "type": "cuboid",
-            "x_size": self.x_size,
-            "y_size": self.y_size,
-            "z_size": self.z_size,
-            "frame": self.frame.data,
-        }
+        data = super().data
+        data["type"] = "cuboid"
+        data["x_size"] = self.x_size
+        data["y_size"] = self.y_size
+        data["z_size"] = self.z_size
+        data["frame"] = self.frame.data
+        return data
 
     @property
     def volume(self) -> float:

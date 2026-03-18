@@ -14,12 +14,12 @@ class Frame(Geometry):
 
     @property
     def data(self) -> dict:
-        return {
-            "type": "frame",
-            "origin": self.origin.data,
-            "x_axis": self.x_axis.data,
-            "y_axis": self.y_axis.data,
-        }
+        data = super().data
+        data["type"] = "frame"
+        data["origin"] = self.origin.data
+        data["x_axis"] = self.x_axis.data
+        data["y_axis"] = self.y_axis.data
+        return data
 
     @property
     def z_axis(self) -> Vector:

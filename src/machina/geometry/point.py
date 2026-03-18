@@ -13,7 +13,12 @@ class Point(Geometry):
 
     @property
     def data(self) -> dict:
-        return {"x": self.x, "y": self.y, "z": self.z}
+        data = super().data
+        data["type"] = "point"
+        data["x"] = self.x
+        data["y"] = self.y
+        data["z"] = self.z
+        return data
 
     def __repr__(self):
         return f"Point({self.x}, {self.y}, {self.z})"

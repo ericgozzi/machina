@@ -3,6 +3,7 @@ from .frame import Frame
 from .geometry import Geometry
 from .line import Line
 from .point import Point
+from .polyline import Polyline
 from .rotation import Rotation
 from .scale import Scale
 from .sphere import Sphere
@@ -22,4 +23,5 @@ __all__ = [
     "Transformation",
     "Translation",
     "Sphere",
+    "Polyline",
 ]

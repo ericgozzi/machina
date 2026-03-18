@@ -14,12 +14,12 @@ class Vector(Geometry):
 
     @property
     def data(self) -> dict:
-        return {
-            "type": "vector",
-            "x": self.x,
-            "y": self.y,
-            "z": self.z,
-        }
+        data = super().data
+        data["type"] = "vector"
+        data["x"] = self.x
+        data["y"] = self.y
+        data["z"] = self.z
+        return data
 
     def __add__(self, other):
         x = self.x + other.x

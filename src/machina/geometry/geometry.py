@@ -7,9 +7,11 @@ class Geometry(ABC):
         self.attributes.update(kwargs)
 
     @property
-    @abstractmethod
     def data(self) -> dict:
-        raise NotImplementedError
+        data = {}
+        for key, value in self.attributes.items():
+            data[key] = value
+        return data
 
     @classmethod
     @abstractmethod

@@ -13,11 +13,11 @@ class Line(Geometry):
 
     @property
     def data(self) -> dict:
-        return {
-            "type": "line",
-            "start": self.start.data,
-            "end": self.end.data,
-        }
+        data = super().data
+        data["type"] = "line"
+        data["start"] = self.start.data
+        data["end"] = self.end.data
+        return data
 
     @property
     def length(self) -> float:
