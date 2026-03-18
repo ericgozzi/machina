@@ -5,6 +5,7 @@ from .line import Line
 from .point import Point
 from .rotation import Rotation
 from .scale import Scale
+from .sphere import Sphere
 from .transformation import Transformation
 from .translation import Translation
 from .vector import Vector
@@ -20,4 +21,5 @@ __all__ = [
     "Scale",
     "Transformation",
     "Translation",
+    "Sphere",
 ]

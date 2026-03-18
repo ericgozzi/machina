@@ -5,14 +5,18 @@ from typing import Optional
 from machina.geometry.frame import Frame
 from machina.geometry.geometry import Geometry
 from machina.geometry.point import Point
-from machina.geometry.vector import Vector
 
 
 class Cuboid(Geometry):
     def __init__(
-        self, x_size: float, y_size: float, z_size: float, frame: Optional[Frame]
+        self,
+        x_size: float,
+        y_size: float,
+        z_size: float,
+        frame: Optional[Frame],
+        **kwargs,
     ):
-        super().__init__()
+        super().__init__(**kwargs)
         self.x_size = x_size
         self.y_size = y_size
         self.z_size = z_size
@@ -83,15 +87,6 @@ class Cuboid(Geometry):
             + self.frame.z_axis * (self.z_size / 2)
         )
         return [v0, v1, v2, v3, v4, v5, v6, v7]
-
-    @property
-    def position(self) -> Point:
-        return self.frame.origin
-
-    @position.setter
-    def position(self, point: Point) -> Cuboid:
-        self.frame.origin = point
-        return self
 
     @classmethod
     def from_data(cls, data):

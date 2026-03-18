@@ -6,8 +6,8 @@ from machina.geometry.vector import Vector
 
 
 class Frame(Geometry):
-    def __init__(self, origin: Point, x_axis: Vector, y_axis: Vector):
-        super().__init__()
+    def __init__(self, origin: Point, x_axis: Vector, y_axis: Vector, **kwargs):
+        super().__init__(**kwargs)
         self.origin = origin
         self.x_axis = x_axis
         self.y_axis = y_axis
