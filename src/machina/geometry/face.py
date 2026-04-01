@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import TYPE_CHECKING
 
 from machina.geometry.geometry import Geometry
@@ -32,6 +34,17 @@ class Face(Geometry):
                 break
         return vertices
 
+    def halfedges(self) -> list[Halfedge]:
+        halfedges = []
+        halfedge_start = self.halfedge
+        halfedge = self.halfedge
+        while True:
+            halfedges.append(halfedge)
+            halfedge = halfedge.next
+            if halfedge == halfedge_start:
+                break
+        return halfedges
+
     @classmethod
-    def from_data(cls, data: dict) -> "Face":
+    def from_data(cls, data: dict) -> Face:
         pass

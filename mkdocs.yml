@@ -1,0 +1,20 @@
+site_name: MACHINA docs
+
+nav:
+  - Home: index.md
+  - Core Systems:
+      - Overview: systems/index.md
+      - Engine: systems/engine.md
+      - Hydraulics: systems/hydraulics.md
+  - Troubleshooting: guides/fixing-stuff.md
+  - About: about.md
+
+theme:
+  name: simple-blog
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.] # Look in the current root directory

@@ -1,5 +1,6 @@
 from typing import Optional
 
+from machina.geometry.halfedge import Halfedge
 from machina.geometry.point import Point
 
 
@@ -8,7 +9,7 @@ class Vertex(Point):
         self, x: float, y: float, z: float, index: Optional[int] = None, **kwargs
     ):
         super().__init__(x, y, z, index=index, **kwargs)
-        self.halfedge: Halfedge = None
+        self.halfedge: Optional[Halfedge] = None
         self.index = index
 
     @property

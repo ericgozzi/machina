@@ -1,4 +1,5 @@
 from .cuboid import Cuboid
+from .curve import Curve
 from .frame import Frame
 from .geometry import Geometry
 from .line import Line
