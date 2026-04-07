@@ -125,7 +125,7 @@ class Picture:
                 os.startfile(temp_path)
             elif os.name == "posix":  # Linux/Unix
                 subprocess.call(("xdg-open", temp_path))
-        except Exception as e:
+        except Exception:
             pass
 
     def pixel(self, x, y) -> Color:
@@ -208,7 +208,7 @@ class Picture:
         paste_height = y_end - y
 
         if paste_width <= 0 or paste_height <= 0:
-            return
+            raise ValueError("Paste position is out of bounds of the other picture")
 
         # Paste the pixels from the current picture onto the other picture
         other._pixels[y:y_end, x:x_end] = self._pixels[0:paste_height, 0:paste_width]

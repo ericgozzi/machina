@@ -1,7 +1,7 @@
 from typing import Optional
 
-from machina.geometry.halfedge import Halfedge
-from machina.geometry.point import Point
+from ..point import Point
+from .halfedge import Halfedge
 
 
 class Vertex(Point):

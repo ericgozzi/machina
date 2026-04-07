@@ -5,17 +5,17 @@ from typing import TYPE_CHECKING
 from machina.geometry.geometry import Geometry
 
 if TYPE_CHECKING:
-    from machina.geometry.face import Face
-    from machina.geometry.vertex import Vertex
+    from .face import Face
+    from .vertex import Vertex
 
 
 class Halfedge(Geometry):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.vertex: Vertex = None
-        self.twin: Halfedge = None
-        self.next: Halfedge = None
-        self.face: Face = None
+        self.vertex: Vertex
+        self.twin: Halfedge
+        self.next: Halfedge
+        self.face: Face
 
     @property
     def data(self) -> dict:
@@ -28,4 +28,4 @@ class Halfedge(Geometry):
 
     @classmethod
     def from_data(cls, data: dict) -> Halfedge:
-        pass
+        raise NotImplementedError

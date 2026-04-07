@@ -1,9 +1,9 @@
 from typing import Union
 
-from machina.geometry.face import Face
-from machina.geometry.geometry import Geometry
-from machina.geometry.halfedge import Halfedge
-from machina.geometry.vertex import Vertex
+from ..geometry import Geometry
+from .face import Face
+from .halfedge import Halfedge
+from .vertex import Vertex
 
 
 class Mesh(Geometry):
@@ -92,25 +92,25 @@ class Mesh(Geometry):
 
         return mesh
 
-    def add_vertex(self, x, y, z, index=None):
+    def add_vertex(self, x, y, z, index=None) -> Vertex:
         if not index:
             index = self._ni_vertex
         v = Vertex(x, y, z, index)
         self._vertices_dict[index] = v
         self._vertices_index_list.append(v)
         self._ni_vertex += 1
+        return v
 
     def remove_vertex(self, vertex: Union[Vertex, int]):
 
         if isinstance(vertex, int):
-            vertex: Vertex = self._vertices_dict[vertex]
-
-        if vertex is None:
-            return
+            target_vertex: Vertex = self._vertices_dict[vertex]
+        else:
+            target_vertex = vertex
 
         # Collect halfedges to remove
         halfedges_to_remove = []
-        he_start = vertex.halfedge
+        he_start = target_vertex.halfedge
         if he_start is None:
             return
 
@@ -146,8 +146,8 @@ class Mesh(Geometry):
                     self._faces_index_list[face]
 
         # Remove the vertex
-        del self._vertices_dict[vertex.index]
-        if vertex in self._vertices_index_list:
+        del self._vertices_dict[target_vertex.index]
+        if target_vertex in self._vertices_index_list:
             self._vertices_index_list.remove(vertex)
 
     def add_face(self, vertices: Union[list[Vertex], list[int]]) -> Face:
@@ -188,16 +188,17 @@ class Mesh(Geometry):
             self._halfedges_dict[(v_start, v_end)] = halfedge
             self._halfedges_list.append(halfedge)
 
+        return face
+
     def remove_face(self, face: Union[Face, int]):
 
         if isinstance(face, int):
-            face: Face = self._faces_dict[face]
-
-        if face is None:
-            return
+            target_face: Face = self._faces_dict[face]
+        else:
+            target_face = face
 
         # Collect halfedges to remove
-        halfedges_to_remove = face.halfedges
+        halfedges_to_remove = target_face.halfedges
 
         # Remove halfedges
         for he in halfedges_to_remove:
@@ -210,8 +211,8 @@ class Mesh(Geometry):
                 he.twin.twin = None
 
         # Remove face
-        if face.index in self._faces_dict:
-            del self._faces_dict[face.index]
+        if target_face.index in self._faces_dict:
+            del self._faces_dict[target_face.index]
 
         if face in self._faces_dict:
             self._faces_index_list.remove(face)

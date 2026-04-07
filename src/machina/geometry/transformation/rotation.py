@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import math
 
-from machina.geometry.point import Point
-from machina.geometry.transformation import Transformation
-from machina.geometry.vector import Vector
+from ..point import Point
+from ..vector import Vector
+from .transformation import Transformation
 
 
 class Rotation(Transformation):

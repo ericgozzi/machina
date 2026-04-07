@@ -5,8 +5,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from machina.geometry.point import Point
-    from machina.geometry.transformation import Transformation
     from machina.geometry.vector import Vector
+
+    from .transformation.transformation import Transformation
 
 
 class Geometry(ABC):

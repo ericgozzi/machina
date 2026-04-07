@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from machina.geometry.geometry import Geometry
-from machina.geometry.vector import Vector
+from .geometry import Geometry
+from .vector import Vector
 
 if TYPE_CHECKING:
-    from machina.geometry.transformation import Transformation
+    from .transformation.transformation import Transformation
 
 
 class Point(Geometry):
@@ -40,7 +40,9 @@ class Point(Geometry):
     def __sub__(self, other) -> Vector:
         return Vector(self.x - other.x, self.y - other.y, self.z - other.z)
 
-    def __eq__(self, other: Point) -> bool:
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Point):
+            return NotImplemented
         return self.x == other.x and self.y == other.y and self.z == other.z
 
     def __getitem__(self, index) -> float:

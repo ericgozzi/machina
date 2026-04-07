@@ -1,6 +1,6 @@
-from machina.geometry.frame import Frame
-from machina.geometry.point import Point
-from machina.geometry.vector import Vector
+from ..frame import Frame
+from ..point import Point
+from ..vector import Vector
 
 
 class Transformation:

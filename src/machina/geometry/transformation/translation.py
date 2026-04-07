@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from machina.geometry.transformation import Transformation
-from machina.geometry.vector import Vector
+from ..vector import Vector
+from .transformation import Transformation
 
 
 class Translation(Transformation):

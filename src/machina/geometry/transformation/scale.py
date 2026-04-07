@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from machina.geometry.point import Point
-from machina.geometry.transformation import Transformation
+from ..point import Point
+from .transformation import Transformation
 
 
 class Scale(Transformation):

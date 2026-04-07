@@ -1,9 +1,15 @@
 from __future__ import annotations
 
 import math
+from typing import TYPE_CHECKING
 
-from machina.geometry.geometry import Geometry
-from machina.geometry.point import Point
+from machina.geometry.transformation.translation import Translation
+
+from .geometry import Geometry
+from .point import Point
+
+if TYPE_CHECKING:
+    from .transformation.transformation import Transformation
 
 
 class Sphere(Geometry):
@@ -28,6 +34,6 @@ class Sphere(Geometry):
     def from_data(cls, data: dict) -> Sphere:
         return cls(Point.from_data(data["center"]), data["radius"])
 
-    def transform(self, transformation):
+    def transform(self, transformation: Transformation):
         self.center.transform(transformation)
         self.radius *= transformation.scale_factor
