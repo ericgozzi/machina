@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+from typing import Optional
+
 import imageio.v2 as imageio
 import numpy as np
 
-from .color import Color
+from machina.colors import WHITE, Color
 
 
 class Picture:
@@ -70,6 +72,25 @@ class Picture:
 
         """
         pixels = imageio.imread(file_path)
+        return cls(pixels)
+
+    @classmethod
+    def from_blank(
+        cls, width: int, height: int, color: Optional[Color] = None
+    ) -> Picture:
+        """
+        Creates a blank picture of the specified width and height, filled with the given color.
+        Args:
+            width: The width of the blank picture in pixels.
+            height: The height of the blank picture in pixels.
+            color: An optional Color instance to fill the picture with (default is white).
+        """
+        if color is None:
+            color = WHITE
+        r = int(color.r * 255)
+        g = int(color.g * 255)
+        b = int(color.b * 255)
+        pixels = np.full((height, width, 3), (r, g, b), dtype=np.uint8)
         return cls(pixels)
 
     def copy(self) -> Picture:
