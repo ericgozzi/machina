@@ -4,7 +4,6 @@ import os
 import subprocess
 import sys
 import tempfile
-from typing import Optional
 
 import numpy as np
 from scipy.io import wavfile

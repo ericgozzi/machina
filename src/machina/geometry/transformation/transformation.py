@@ -52,7 +52,6 @@ class Transformation:
         return cls(matrix)
 
     def as_frame(self) -> Frame:
-
         frame_origin = Point(self.matrix[0][3], self.matrix[1][3], self.matrix[2][3])
 
         sx, sy, sz = self.scale_factors

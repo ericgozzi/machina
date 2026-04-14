@@ -3,7 +3,6 @@ from __future__ import annotations
 import math
 from typing import TYPE_CHECKING
 
-from machina.geometry.transformation.translation import Translation
 
 from .geometry import Geometry
 from .point import Point

@@ -1,7 +1,6 @@
 import time
 
 from machina import Artist, Line, Point, Polyline
-from machina.geometry.curve import Curve
 
 a = Artist()
 

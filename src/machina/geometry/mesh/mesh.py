@@ -102,7 +102,6 @@ class Mesh(Geometry):
         return v
 
     def remove_vertex(self, vertex: Union[Vertex, int]):
-
         if isinstance(vertex, int):
             target_vertex: Vertex = self._vertices_dict[vertex]
         else:
@@ -151,7 +150,6 @@ class Mesh(Geometry):
             self._vertices_index_list.remove(vertex)
 
     def add_face(self, vertices: Union[list[Vertex], list[int]]) -> Face:
-
         if isinstance(vertices[0], int):
             vertices = [self._vertices_dict[v] for v in vertices]
 
@@ -191,7 +189,6 @@ class Mesh(Geometry):
         return face
 
     def remove_face(self, face: Union[Face, int]):
-
         if isinstance(face, int):
             target_face: Face = self._faces_dict[face]
         else:

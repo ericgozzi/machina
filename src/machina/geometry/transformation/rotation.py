@@ -9,7 +9,6 @@ from .transformation import Transformation
 
 class Rotation(Transformation):
     def __init__(self, angle: float, axis: Vector, point: Point):
-
         axis = axis.copy()
         axis.unitize()
 
